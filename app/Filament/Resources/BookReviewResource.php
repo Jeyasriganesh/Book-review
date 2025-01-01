@@ -33,7 +33,9 @@ class BookReviewResource extends Resource
                 Forms\Components\TextInput::make('author_name')
                     ->label('Author Name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->regex('/^[a-zA-Z\s]+$/') // Only allows letters and spaces
+                    ->validationAttribute('Book Title'),
                 Forms\Components\TextInput::make('rating')
                     ->required()
                     ->numeric() 
