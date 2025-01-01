@@ -87,7 +87,9 @@ class BookReviewResource extends Resource
             ->defaultSort('review_date', 'desc')
             ->actions([  // Add actions to the rows
                 Tables\Actions\EditAction::make(),  // Edit button
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\DeleteAction::make()  // Delete button
+                
             ]);
     }
 
@@ -97,7 +99,7 @@ class BookReviewResource extends Resource
             'index' => Pages\ListBookReviews::route('/'),
             'create' => Pages\CreateBookReview::route('/create'),
             'edit' => Pages\EditBookReview::route('/{record}/edit'),
-            //'view' => Pages\ViewBookReview::route('/{record}'),
+             'view' => Pages\ViewBookReview::route('/{record}'),
         ];
     }
 }
